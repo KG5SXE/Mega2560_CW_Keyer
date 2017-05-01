@@ -1163,6 +1163,11 @@ byte send_buffer_status = SERIAL_SEND_BUFFER_NORMAL;
   LiquidCrystal_I2C lcd(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);  // for FEATURE_LCD_YDv1; set the LCD I2C address needed for LCM1602 IC V1
 #endif
 
+#if defined(FEATURE_LCD_SUNFOUNDER_I2C_KG5SXE)
+  //LiquidCrystal_I2C lcd(0x27);
+  LiquidCrystal_I2C lcd(0x27,20,4);  // set the LCD address to 0x27 for a 20 chars and 4 line display
+#endif
+
 #if defined(FEATURE_USB_KEYBOARD) || defined(FEATURE_USB_MOUSE)
   USB Usb;
   uint32_t next_time;
@@ -1348,6 +1353,11 @@ void setup()
   initialize_web_server();
   initialize_debug_startup();
 
+    #if defined(FEATURE_LCD_SUNFOUNDER_I2C_KG5SXE)  //Enable backlight, brightness controlled by potentiometer
+	//lcd.init();  //initialize the lcd
+	lcd.backlight();  //open the backlight 
+  #endif //FEATURE_LCD_SUNFOUNDER_I2C_KG5SXE
+  
 }
 
 // --------------------------------------------------------------------------------------------
