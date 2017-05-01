@@ -806,6 +806,11 @@ Recent Update History
   #include <LiquidCrystal_I2C.h>
 #endif //FEATURE_SAINSMART_I2C_LCD  
 
+#if defined(FEATURE_LCD_SUNFOUNDER_I2C_KG5SXE)
+  #include <LiquidCrystal_I2C.h>
+  #include <Wire.h>
+#endif
+
 #if defined(FEATURE_CALLSIGN_RECEIVE_PRACTICE)
   #include <BasicTerm.h>
 #endif
