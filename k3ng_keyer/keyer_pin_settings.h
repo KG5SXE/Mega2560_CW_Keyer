@@ -2,28 +2,28 @@
 #ifndef keyer_pin_settings_h
 #define keyer_pin_settings_h
 
-#define paddle_left 2
-#define paddle_right 5
-#define tx_key_line_1 11       // (high = key down/tx on)
-#define tx_key_line_2 12
-#define tx_key_line_3 0
-#define tx_key_line_4 0
+#define paddle_left 5
+#define paddle_right 6
+#define tx_key_line_1 22       // (high = key down/tx on)
+#define tx_key_line_2 23
+#define tx_key_line_3 24
+#define tx_key_line_4 25
 #define tx_key_line_5 0
 #define tx_key_line_6 0
-#define sidetone_line 4         // connect a speaker for sidetone
+#define sidetone_line 9         // connect a speaker for sidetone
 #define potentiometer A0        // Speed potentiometer (0 to 5 V) Use pot from 1k to 10k
-#define ptt_tx_1 0              // PTT ("push to talk") lines
-#define ptt_tx_2 0              //   Can be used for keying fox transmitter, T/R switch, or keying slow boatanchors
-#define ptt_tx_3 0              //   These are optional - set to 0 if unused
-#define ptt_tx_4 0
+#define ptt_tx_1 26              // PTT ("push to talk") lines
+#define ptt_tx_2 27              //   Can be used for keying fox transmitter, T/R switch, or keying slow boatanchors
+#define ptt_tx_3 28              //   These are optional - set to 0 if unused
+#define ptt_tx_4 29
 #define ptt_tx_5 0
 #define ptt_tx_6 0
-#define tx_key_dit 0            // if defined, goes active for dit (any transmitter) - customized with tx_key_dit_and_dah_pins_active_state and tx_key_dit_and_dah_pins_inactive_state
-#define tx_key_dah 0            // if defined, goes active for dah (any transmitter) - customized with tx_key_dit_and_dah_pins_active_state and tx_key_dit_and_dah_pins_inactive_state
+#define tx_key_dit 42            // if defined, goes active for dit (any transmitter) - customized with tx_key_dit_and_dah_pins_active_state and tx_key_dit_and_dah_pins_inactive_state
+#define tx_key_dah 43            // if defined, goes active for dah (any transmitter) - customized with tx_key_dit_and_dah_pins_active_state and tx_key_dit_and_dah_pins_inactive_state
 
 #ifdef FEATURE_COMMAND_BUTTONS
   #define analog_buttons_pin A1
-  #define command_mode_active_led 0
+  #define command_mode_active_led 40
 #endif //FEATURE_COMMAND_BUTTONS
 
 /*
@@ -66,8 +66,8 @@ FEATURE_SIDETONE_SWITCH
 // rotary encoder pins and options - rotary encoder code from Jim Balls M0CKE
 #ifdef FEATURE_ROTARY_ENCODER
   #define OPTION_ENCODER_HALF_STEP_MODE     // Half-step mode?
-  #define rotary_pin1 0                      // CW Encoder Pin
-  #define rotary_pin2 0                    // CCW Encoder Pin
+  #define rotary_pin1 10                      // CW Encoder Pin
+  #define rotary_pin2 11                    // CCW Encoder Pin
   #define OPTION_ENCODER_ENABLE_PULLUPS     // define to enable weak pullups.
 #endif //FEATURE_ROTARY_ENCODER
 
@@ -78,29 +78,29 @@ FEATURE_SIDETONE_SWITCH
 #endif //FEATURE_LED_RING
 
 #ifdef FEATURE_ALPHABET_SEND_PRACTICE
-  #define correct_answer_led 0
-  #define wrong_answer_led 0
+  #define correct_answer_led 45
+  #define wrong_answer_led 46
 #endif //FEATURE_ALPHABET_SEND_PRACTICE
 
 #ifdef FEATURE_PTT_INTERLOCK
-  #define ptt_interlock 0  // this pin disables PTT and TX KEY
+  #define ptt_interlock 47  // this pin disables PTT and TX KEY
 #endif //FEATURE_PTT_INTERLOCK
 
 #ifdef FEATURE_STRAIGHT_KEY
-  #define pin_straight_key 52
+  #define pin_straight_key 7
 #endif //FEATURE_STRAIGHT_KEY
 
 #ifdef FEATURE_CW_DECODER
-  #define cw_decoder_pin A3//A11 //A5 //A3  
+  #define cw_decoder_pin A5//A11 //A5 //A3  
   #ifdef OPTION_CW_DECODER_GOERTZEL_AUDIO_DETECTOR
-    #define cw_decoder_audio_input_pin 0 // this must be an analog pin!
+    #define cw_decoder_audio_input_pin A4 // this must be an analog pin!
   #endif //OPTION_CW_DECODER_GOERTZEL_AUDIO_DETECTOR
-  #define cw_decoder_indicator 24
+  #define cw_decoder_indicator 41
 #endif //FEATURE_CW_DECODER
 
 
 #if defined(FEATURE_COMPETITION_COMPRESSION_DETECTION)
-  #define compression_detection_pin 13
+  #define compression_detection_pin 49
 #endif //FEATURE_COMPETITION_COMPRESSION_DETECTION
 
 #if defined(FEATURE_SLEEP)
